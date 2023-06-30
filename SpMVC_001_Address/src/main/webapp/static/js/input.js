@@ -46,13 +46,46 @@ document.addEventListener("DOMContentLoaded", () => {
     // input_id = document.querySelector("form.main input[name='a_id']")
     // querySelector 문이 길어지면 가끔 못읽는 경우가 있어서 나누셧다함
 
+    for (let i = 0; i < msg_boxs.length; i++) {
+      msg_boxs[i].classList.remove("ok");
+      msg_boxs[i].classList.remove("error");
+    }
+
     if (!input_id.value) {
       message_view(INDEX.ID, "error", "* ID 는 반드시 입력해야 합니다");
       input_id.foucs();
       return false;
     }
+    if (!input_name.value) {
+      message_view(INDEX.NAME, "error", "* 이름은 반드시 입력해야 합니다");
+      input_name.focus();
+      return false;
+    }
+    if (!input_tel.value) {
+      message_view(INDEX.TEL, "error", "* 전화번호는 반드시 입력해야 합니다");
+      input_tel.focus();
+      return false;
+    }
 
-    // addr_input?.submit();
+    const tel_rexp = /^\d{3}-\d{3,4}-\d{4}$/;
+    if (!tel_rexp.test(input_tel.value)) {
+      message_view(INDEX.TEL, "error", "전화번호 형식 틀립니다(000-0000-0000");
+      input_tel.foucs();
+      input_tel.select();
+      return false;
+    }
+
+    if (!input_addr.value) {
+      message_view(INDEX.ADDR, "error", "* 주소는 반드시 입력해야 합니다");
+      input_tel.focus();
+      input_tel.select();
+      return false;
+    }
+
+    // project 할땐 넣지말도록??
+    if (confirm("저장할까요?")) {
+      form_addr?.submit();
+    }
   };
 
   // 선언된 event call 함수를 사용하여 click event 선언
