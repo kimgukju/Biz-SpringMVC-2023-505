@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+nav.main {
+  background-color: orange;
+}
+
+nav.main.form input {
+  height: 40px;
+}
