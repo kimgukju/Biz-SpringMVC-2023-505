@@ -44,3 +44,7 @@ form.main div.button-box button {
 form.main div.button-box button:hover {
   box-shadow: 2px 2px 2px black;
 }
+
+div.img {
+  text-align: center;
+}
