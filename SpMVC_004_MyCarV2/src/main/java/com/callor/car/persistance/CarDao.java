@@ -16,4 +16,6 @@ public interface CarDao {
 			+ " ORDER BY c_edate DESC, c_etime DESC")
 	public List<CarDto> selectAll();
 	
+	public void create_carm_table(String dumy);
+	
 }

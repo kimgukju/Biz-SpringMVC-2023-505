@@ -48,3 +48,5 @@ SELECT * FROM tbl_carmanager
 WHERE c_carnum = '001'
 ORDER BY c_sdate DESC, c_stime DESC
 LIMIT 1;
+
+SELECT * FROM tbl_carmanager;

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+table.list {
+  width: 80%;
+  margin: 5px auto;
+}
+
+table.list ul {
+  display: flex;
+  list-style: none;
+}
+
+table.list td {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  margin: 3px;
+  margin-left: -1px;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
