@@ -22,3 +22,12 @@ INSERT INTO tbl_books (
 	'001','자바야 놀자','야놀자','놀자출판사',2010,20000,2000
 );
 SELECT * FROM tbl_books;
+USE rentbookDB;
+CREATE TABLE tbl_members (
+	M_CODE	VARCHAR(6)	NOT NULL	PRIMARY KEY,
+	M_NAME	VARCHAR(125)	NOT NULL,	
+	M_TEL	VARCHAR(15)	NOT NULL,	
+	M_ADDR	VARCHAR(125)		
+);
+
+SELECT * FROM tbl_members;
