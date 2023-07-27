@@ -46,7 +46,27 @@ SELECT * FROM tbl_books LIMIT 10;
 SELECT COUNT(*) FROM tbl_members;
 SELECT * FROM tbl_members LIMIT 10;
 
-SELECT * FROM tbl_rent_book;
+SELECT * FROM tbl_rent_book R
+LEFT JOIN tbl_members M
+	ON R.rent_mcode = M.m_code
+LEFT JOIN tbl_books B
+	ON R.rent_bcode = B.b_code;
 
+DESC tbl_books;
 
+-- 전체 데이터 중에서 5페이지에서 10개를 보고 싶다
+-- 전체 데이터 중에서 1페이지에서 10 개 : 1 ~ 10번까지 : 0 ~ 9번까지 보여주기
+-- 1페이지 일 경우 시작값이 1이 되려면 (Page - 1) * 10 + 1
+
+-- 전체 데이터 중에서 2페이지에서 10개 : 10 ~ 19번까지 
+-- 2페이지 일 경우 시작값이 10이 되려면 (Page - 1) * 10
+
+-- 전체 데이터 중에서 3페이지에서 10개 : 20 ~ 29번까지 
+-- 3페이지 일 경우 시작값이 20이 되려면 (Page - 1) * 10
+
+-- 처음 시작에서 10개를 건너뛰고 : OFFSET 10
+-- 그 위치 부터 10개를 SELECT 하라
+SELECT * FROM tbl_books
+ORDER BY b_code
+LIMIT 10 OFFSET 10;
 
