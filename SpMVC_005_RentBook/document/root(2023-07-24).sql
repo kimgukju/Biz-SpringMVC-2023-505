@@ -70,3 +70,23 @@ SELECT * FROM tbl_books
 ORDER BY b_code
 LIMIT 10 OFFSET 10;
 
+SELECT COUNT(*) FROM tbl_books
+WHERE 
+b_name LIKE CONCAT('%','부자','%') OR
+b_name LIKE CONCAT('%','행복','%') OR
+b_name LIKE CONCAT('%','부동산','%') ;
+
+
+CREATE DATABASE busDB;
+use busdb;
+Create table tbl_bus_user(
+	bu_id	VARCHAR(50)		PRIMARY KEY,
+	bu_name	VARCHAR(10)	NOT NULL	,
+	bu_password	VARCHAR(12)	NOT NULL	,
+	bu_tel	VARCHAR(13)	NOT NULL	
+);
+
+SELECT * FROM tbl_bus_user;
+
+USE bbsDB;
+SELECT * FROM tbl_bbs;
