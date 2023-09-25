@@ -1,4 +1,4 @@
-package com.callor.hello;
+package com.callor.hello.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
